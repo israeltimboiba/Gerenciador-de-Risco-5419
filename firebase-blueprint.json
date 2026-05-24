@@ -1,0 +1,37 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "Dados do projeto de gerenciamento de risco SPDA",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "client": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "rt": { "type": "string" },
+        "length": { "type": "number" },
+        "width": { "type": "number" },
+        "height": { "type": "number" },
+        "ng": { "type": "number" },
+        "cd": { "type": "number" },
+        "structureType": { "type": "string" },
+        "roofType": { "type": "string" },
+        "fireRisk": { "type": "string" },
+        "numOccupants": { "type": "number" },
+        "totalTimeAnnually": { "type": "number" },
+        "rf": { "type": "number" },
+        "rp": { "type": "number" },
+        "ownerId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "ownerId", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/projects/{projectId}": {
+      "schema": "Project",
+      "description": "Coleção de projetos SPDA"
+    }
+  }
+}

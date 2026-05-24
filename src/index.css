@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #E4E3E0;
+  --color-brand-sidebar: #DCDAD7;
+  --color-brand-text: #141414;
+  --color-brand-border: #141414;
+  
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-text font-sans;
+  }
+}

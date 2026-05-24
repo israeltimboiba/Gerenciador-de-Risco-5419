@@ -1,0 +1,10 @@
+{
+  "name": "Remix: NBR 5419-2 Professional",
+  "description": "Sistema profissional de gerenciamento de risco conforme NBR 5419:2026 Parte 2, com memória de cálculo, parametrização completa e relatórios auditáveis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "Gerenciamento de Risco",
+    "Cálculo Normativo",
+    "Emissão de Relatórios PDF"
+  ]
+}
