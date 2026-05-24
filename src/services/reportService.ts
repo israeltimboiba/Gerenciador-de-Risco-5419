@@ -99,7 +99,7 @@ export class ReportService {
 
     if (project.logoUrl) {
       try {
-        doc.addImage(project.logoUrl, 'PNG', 180, 14, 16, 16, undefined, 'FAST');
+        doc.addImage(project.logoUrl, 'PNG', 164, 10, 32, 32, undefined, 'FAST');
       } catch (e) {
         console.warn('Unable to append logoUrl inside page 1:', e);
       }
@@ -486,7 +486,7 @@ export class ReportService {
     doc.text(String(project.professionalTitle || '').toUpperCase(), 152.5, sBlockY + 18, { align: 'center' });
     doc.text(`${project.professionalCouncil}: ${project.professionalId || 'N/A'}`, 152.5, sBlockY + 22, { align: 'center' });
     doc.setFontSize(7);
-    doc.text('Assinatura Eletrônica sob registro de ART', 152.5, sBlockY + 26, { align: 'center' });
+    doc.text('Assinatura Eletrônica', 152.5, sBlockY + 26, { align: 'center' });
 
     // Header & Footer on all pages
     const pageCount = (doc as any).internal.getNumberOfPages();
@@ -513,14 +513,6 @@ export class ReportService {
         doc.text(`Laudo Auditável NBR-5419-2:2026`, 14, 288);
         doc.text(`Página ${i} de ${pageCount}`, 105, 288, { align: 'center' });
         doc.text(`Revisão: ${project.revision || '00'}`, 196, 288, { align: 'right' });
-
-        if (project.logoUrl && i > 1) {
-            try {
-                doc.addImage(project.logoUrl, 'PNG', 180, 8, 16, 16, undefined, 'FAST');
-            } catch (e) {
-                console.warn('Unable to append logoUrl inside pages:', e);
-            }
-        }
     }
 
     doc.save(`Memorial_Audito_SPDA_${(project.name || 'Projeto').replace(/\s+/g, '_')}.pdf`);
