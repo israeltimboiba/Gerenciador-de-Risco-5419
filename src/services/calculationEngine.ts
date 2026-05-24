@@ -103,15 +103,23 @@ export class CalculationEngine {
     // =========================
     // 5. PROBABILIDADES (CORRIGIDO)
     // =========================
-    const classes = ['nenhum', 'IV', 'III', 'II', 'I'] as const;
+    const classes = ['nenhum', 'I', 'II', 'III', 'IV'] as const;
 
     const pb = PROBABILITY_FACTORS.PB[classes[protection.spdaClass]];
-    const pc = PROBABILITY_FACTORS.PC[classes[protection.dpsClass]];
+    
+    // Mapeamento para as novas chaves de PC do usuário em constants.ts (nenhum, DPS_III, DPS_II, DPS_I)
+    const pcMapping = {
+      0: 'nenhum',
+      1: 'DPS_III',
+      2: 'DPS_II',
+      3: 'DPS_I'
+    } as const;
+    const pcKey = pcMapping[protection.dpsClass] ?? 'nenhum';
+    const pc = PROBABILITY_FACTORS.PC[pcKey];
 
     // Blindagem
-    const ks1 = protection.internalShielding ? 0.1 : 0.1;
-    const ks2 = protection.internalShielding ? 0.01 : 0.01;
-
+    const ks1 = protection.internalShielding ? 0.1 : 1.0;
+    const ks2 = protection.internalShielding ? 0.01 : 1.0;
     // S1
     const pa = protection.equipotentialization ? 0.01 : 1.0;
     const pb_s1 = pb;

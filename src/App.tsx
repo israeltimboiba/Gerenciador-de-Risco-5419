@@ -1056,10 +1056,9 @@ export default function App() {
                                      className="input-field"
                                    >
                                      <option value={0}>NÃO INSTALADO</option>
-                                     <option value={1}>TIPO I (PRINCIPAL)</option>
-                                     <option value={2}>TIPO II (DISTRIBUIÇÃO)</option>
-                                     <option value={3}>TIPO III (TERMINAL)</option>
-                                     <option value={4}>TIPO I+II (COORDENADO)</option>
+                                     <option value={1}>CLASSE III (TERMINAL)</option>
+                                     <option value={2}>CLASSE II (DISTRIBUIÇÃO)</option>
+                                     <option value={3}>CLASSE I (PRINCIPAL DE ENTRADA)</option>
                                    </select>
                                    <p className="mt-2 text-[9px] opacity-40 italic">Coordenação conforme NBR 5419-4</p>
                                 </Field>

@@ -35,10 +35,10 @@ export type FireRiskType = keyof typeof FIRE_FACTORS;
 export const PROBABILITY_FACTORS = {
 PB: {
     nenhum: 1.0,
-    IV: 0.1,
-    III: 0.1,
-    II: 0.05,
-    I: 0.02,
+    IV: 0.2, 
+    III: 0.1, 
+    II: 0.05, 
+    I: 0.02, 
   },
 
   PC: {

@@ -196,7 +196,7 @@ export class ReportService {
     // Medidas de Proteção
     drawSectionTitle('2.3 - SÍNTESE DE MEDIDAS DE ENGENHARIA DE MITIGAÇÃO', (doc as any).lastAutoTable.finalY + 12);
     const spdaLabel = project.protection.spdaClass === 0 ? 'NÃO INSTALADO' : `SPDA EXTERNO CLASSE ${['','I','II','III','IV'][project.protection.spdaClass]}`;
-    const dpsLabel = project.protection.dpsClass === 0 ? 'SEM COORDENAÇÃO DE DPS' : `DPS COORDENADO NÍVEL ${['','I','II','III','I+II'][project.protection.dpsClass]}`;
+    const dpsLabel = project.protection.dpsClass === 0 ? 'SEM COORDENAÇÃO DE DPS' : `DPS COORDENADO ${['','CLASSE III','CLASSE II','CLASSE I'][project.protection.dpsClass] || 'CLASSE III'}`;
     
     autoTable(doc, {
       startY: (doc as any).lastAutoTable.finalY + 17,
